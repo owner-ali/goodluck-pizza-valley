@@ -1,0 +1,9 @@
+# Netlify static hosting for the client. Set VITE_API_URL in Site settings > Environment variables.
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

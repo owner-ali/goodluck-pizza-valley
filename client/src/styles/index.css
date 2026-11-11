@@ -1,0 +1,30 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+
+:root {
+  --bg: #0d0c0b; --surface: rgba(255,255,255,.06); --line: rgba(255,255,255,.14);
+  --ember: #ff6a1a; --frost: #38e8ff; --gold: #e8d3a2; --text: #f6f1ea; --muted: #b9b0a5;
+}
+html { color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Space Grotesk', system-ui, sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+:focus-visible { outline: 2px solid var(--frost); outline-offset: 3px; }
+
+.glass { background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(14px); border-radius: 1.25rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.6rem; border-radius: 999px; font-weight: 700; transition: transform .2s, box-shadow .2s; }
+.btn:active { transform: scale(.97); }
+.btn-ember { background: linear-gradient(135deg, #ff8a2b, var(--ember)); color: #1a0d03; box-shadow: 0 8px 30px rgba(255,106,26,.35); }
+.btn-frost { border: 1px solid var(--frost); color: var(--frost); box-shadow: 0 0 24px rgba(56,232,255,.18); }
+.world-pizza { --accent: var(--ember); }
+.world-ice { --accent: var(--frost); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+.muted { color: var(--muted); }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+.food-card { transition: transform .15s ease-out, box-shadow .3s; transform-style: preserve-3d; }
+.food-card:hover { box-shadow: 0 20px 50px -22px var(--accent); }
+.plate { background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 72%); }
+.food-card .emoji { display: inline-block; transition: transform .35s; }
+.food-card:hover .emoji { transform: translateZ(40px) scale(1.18) rotate(-6deg); }
+.cursor-ring { display: none; position: fixed; left: 0; top: 0; width: 32px; height: 32px; border: 1.5px solid var(--gold); border-radius: 50%; pointer-events: none; z-index: 90; transition: width .2s, height .2s, margin .2s, background .2s; }
+.cursor-ring[data-hot='1'] { width: 44px; height: 44px; margin: -6px; background: rgba(232,211,162,.18); }

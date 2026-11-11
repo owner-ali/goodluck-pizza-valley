@@ -1,0 +1,19 @@
+# Free self-hosting: docker compose up --build
+# Needs ./server/.env (copy .env.example; MONGODB_URI is overridden below).
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+  server:
+    build: { context: ., dockerfile: server/Dockerfile }
+    env_file: ./server/.env
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/goodluck
+      CLIENT_ORIGIN: http://localhost:8080
+    volumes: [uploads:/app/src/uploads]
+    depends_on: [mongo]
+  web:
+    build: { context: ., dockerfile: client/Dockerfile }
+    ports: ["8080:80"]
+    depends_on: [server]
+volumes: { mongo-data: {}, uploads: {} }
