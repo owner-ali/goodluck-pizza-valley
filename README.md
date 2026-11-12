@@ -1,3 +1,12 @@
+---
+title: Good Luck API
+emoji: 🍕
+colorFrom: red
+colorTo: yellow
+sdk: docker
+app_port: 5000
+pinned: false
+---
 # Good Luck Pizza Valley & Ice Bar
 *Taste the Happiness. Feel the Chill.* A 3D restaurant site: React, Vite, TypeScript, Tailwind, Three.js (React Three Fiber), GSAP, Framer Motion, Node, Express, MongoDB. All free and open source.
 
