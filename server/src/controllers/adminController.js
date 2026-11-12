@@ -1,8 +1,6 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import crypto from 'node:crypto'
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import Admin from '../models/Admin.js'
 import Category from '../models/Category.js'
 import Product from '../models/Product.js'
@@ -12,7 +10,7 @@ import Review from '../models/Review.js'
 import Gallery from '../models/Gallery.js'
 import Message from '../models/Message.js'
 import Setting from '../models/Setting.js'
-import { UPLOAD_DIR } from '../config/paths.js'
+import Upload from '../models/Upload.js'
 import { cleanProduct, cleanSettings, slug, sniffImage } from '../utils/adminClean.js'
 import { getSettings } from '../utils/settingsStore.js'
 
@@ -105,7 +103,7 @@ export const uploadImage = wrap(async (req, res) => {
   const ext = sniffImage(req.file.buffer)
   if (!ext) return bad(res, 'That file is not a valid JPG, PNG or WebP image.')
   const name = crypto.randomBytes(12).toString('hex') + '.' + ext
-  await fs.writeFile(path.join(UPLOAD_DIR, name), req.file.buffer)
+  await Upload.create({ name, mime: { jpg: 'image/jpeg', png: 'image/png', webp: 'image/webp' }[ext], data: req.file.buffer })
   res.status(201).json({ url: '/uploads/' + name })
 })
 

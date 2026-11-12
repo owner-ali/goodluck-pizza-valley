@@ -1,8 +1,29 @@
-# Netlify static hosting for the client. Set VITE_API_URL in Site settings > Environment variables.
+# Netlify: website (static) + API (one serverless function). No credit card needed on the free plan.
+# Set these in Site configuration > Environment variables: MONGODB_URI, JWT_SECRET (and optional DELIVERY_FEE).
 [build]
-  base = "client"
-  command = "npm run build"
-  publish = "dist"
+  command = "cd client && npm install && npm run build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_API_URL = "same-origin"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/uploads/*"
+  to = "/.netlify/functions/api/uploads/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
