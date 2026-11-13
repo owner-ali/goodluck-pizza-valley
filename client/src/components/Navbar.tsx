@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-coal/80 backdrop-blur">
       <nav aria-label="Main" className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <Link to="/" className="font-display text-lg font-bold text-champagne">Good Luck</Link>
+        <Link to="/" className="gt font-display text-lg font-bold">Good Luck</Link>
         <ul className="hidden gap-6 md:flex">{links.map(([n, h]) => <li key={h}><Link className="hover:text-frost" to={h}>{n}</Link></li>)}</ul>
         <div className="flex items-center gap-3">
           <button className="flex items-center gap-1 rounded-full border border-white/20 px-3 py-1.5 text-sm" aria-label={`Open cart, ${count} items`} onClick={() => openCart(true)}><ShoppingBag size={18} />{count}</button>

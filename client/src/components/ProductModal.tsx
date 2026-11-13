@@ -4,6 +4,7 @@ import { Minus, Plus, X } from 'lucide-react'
 import type { MenuItem } from '../data/types'
 import { clampQty, formatPKR, lineTotal } from '../lib/pricing'
 import { useCart } from '../context/CartContext'
+import FoodArt from './FoodArt'
 
 function Body({ item, onClose }: { item: MenuItem; onClose: () => void }) {
   const { add, toast } = useCart()
@@ -48,7 +49,7 @@ function Body({ item, onClose }: { item: MenuItem; onClose: () => void }) {
         initial={{ y: 60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 60, opacity: 0 }}
         className="max-h-[92svh] w-full overflow-y-auto rounded-t-3xl border border-white/15 bg-[#14110f] p-5 md:max-w-lg md:rounded-3xl">
         <div className="flex items-start justify-between gap-3">
-          <div><h2 id="pm-title" className="text-2xl font-bold">{item.emoji} {item.name}</h2><p className="mt-1 text-sm muted">{item.description}</p></div>
+          <div className="flex items-center gap-3"><FoodArt category={item.categoryId} color={item.color} className="h-16 w-16 shrink-0" /><div><h2 id="pm-title" className="text-2xl font-bold">{item.name}</h2><p className="mt-1 text-sm muted">{item.description}</p></div></div>
           <button aria-label="Close" className="rounded-full border border-white/20 p-2" onClick={onClose}><X size={18} /></button>
         </div>
         <fieldset className="mt-5"><legend className="mb-2 font-bold text-champagne">Size</legend>

@@ -10,6 +10,7 @@ import CustomCursor from './components/CustomCursor'
 import ProductModal from './components/ProductModal'
 import CartDrawer from './components/CartDrawer'
 import ScrollToHash from './components/ScrollToHash'
+import ScrollProgress from './components/ScrollProgress'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 const CheckoutPage = lazy(() => import('./pages/CheckoutPage'))
@@ -37,7 +38,7 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <CartProvider>
         {!ready && <LoadingScreen />}
-        <ScrollToHash /><CustomCursor /><Navbar />
+        <ScrollProgress /><ScrollToHash /><CustomCursor /><Navbar />
         <main>
           <Suspense fallback={<div className="min-h-[60svh]" />}>
             <motion.div key={pathname} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>

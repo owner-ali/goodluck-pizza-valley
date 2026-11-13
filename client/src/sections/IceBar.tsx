@@ -4,6 +4,7 @@ import type { MenuState } from '../hooks/useMenu'
 import { useInView } from '../hooks/useInView'
 import { hasWebGL } from '../hooks/useCapabilities'
 import { formatPKR, minPrice } from '../lib/pricing'
+import FoodArt from '../components/FoodArt'
 const IceScene = lazy(() => import('../three/IceScene'))
 
 export default function IceBar({ menu, onOpen }: { menu: MenuState; onOpen: (i: MenuItem) => void }) {
@@ -16,9 +17,9 @@ export default function IceBar({ menu, onOpen }: { menu: MenuState; onOpen: (i: 
   const current = drinks.find((d) => d.id === sel) ?? drinks[0]
 
   return (
-    <section id="ice-bar" className="world-ice relative overflow-hidden px-6 py-20" style={{ background: 'radial-gradient(60% 50% at 50% 0%, rgba(56,232,255,.25), transparent 70%), #06161c' }}>
+    <section id="ice-bar" className="world-ice relative overflow-hidden px-6 py-20" style={{ background: 'radial-gradient(60% 50% at 50% 0%, rgba(34,211,238,.28), transparent 70%), radial-gradient(40% 40% at 90% 90%, rgba(139,92,246,.25), transparent 70%), #07162a' }}>
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-frost md:text-5xl">The Ice Bar</h2>
+        <h2 className="gt2 text-4xl font-bold md:text-5xl">The Ice Bar</h2>
         <p className="mt-2 max-w-md muted">Pick a drink and watch the glass change colour. Sample drinks and prices.</p>
 
         <div ref={ref} className="mt-6 h-[46svh] min-h-[300px] md:h-[480px]" aria-label="3D view of the selected drink">
@@ -32,7 +33,7 @@ export default function IceBar({ menu, onOpen }: { menu: MenuState; onOpen: (i: 
           {drinks.map((d) => (
             <div key={d.id} className={`glass p-4 ${current?.id === d.id ? '!border-frost shadow-[0_0_30px_rgba(56,232,255,.25)]' : ''}`}>
               <button className="block w-full text-left" aria-pressed={current?.id === d.id} onClick={() => setSel(d.id)}>
-                <span className="mr-2 inline-block h-3 w-3 rounded-full" style={{ background: d.color }} aria-hidden="true" />
+                <FoodArt category={d.categoryId} color={d.color} className="mr-2 inline-block h-12 w-12 align-middle" />
                 <b className="text-lg">{d.name}</b><span className="mt-1 block text-sm muted">{d.description}</span>
               </button>
               <div className="mt-3 flex items-center justify-between"><span className="font-bold text-champagne">From {formatPKR(minPrice(d))}</span>

@@ -19,7 +19,7 @@ export default function FoodCard({ item, world, onOpen }: { item: MenuItem; worl
     <article ref={ref} onPointerMove={move} onPointerLeave={() => { if (ref.current) ref.current.style.transform = '' }}
       className="food-card glass flex flex-col p-4" style={{ '--accent': accent } as CSSProperties}>
       <div className="plate relative grid h-36 place-items-center rounded-2xl">
-        <FoodPic id={item.id} image={item.image} emoji={item.emoji} imgClass="emoji h-28 w-28 rounded-full object-cover" emojiClass="emoji text-6xl" />
+        <FoodPic id={item.id} image={item.image} category={item.categoryId} color={item.color} imgClass="emoji h-28 w-28 rounded-full object-cover" artClass="emoji h-28 w-28" />
         <div className="absolute left-2 top-2 flex gap-1 text-xs">
           {item.popular && <span className="rounded-full bg-champagne px-2 py-0.5 font-bold text-black">Popular</span>}
           {item.veg && <span title="Vegetarian" aria-label="Vegetarian" className="rounded-full bg-green-600 p-1"><Leaf size={12} /></span>}

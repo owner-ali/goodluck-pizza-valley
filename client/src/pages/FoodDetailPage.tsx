@@ -15,7 +15,7 @@ export default function FoodDetailPage({ menu, onOpen }: { menu: MenuState; onOp
   return (
     <section className="mx-auto grid max-w-4xl gap-8 px-6 py-12 md:grid-cols-2">
       <div className="plate grid min-h-64 place-items-center rounded-3xl" style={{ '--accent': '#ff6a1a' } as CSSProperties}>
-        <FoodPic id={item.id} image={item.image} emoji={item.emoji} alt={item.name} imgClass="h-56 w-56 rounded-full object-cover" emojiClass="text-9xl" />
+        <FoodPic id={item.id} image={item.image} category={item.categoryId} color={item.color} alt={item.name} imgClass="h-56 w-56 rounded-full object-cover" artClass="h-56 w-56" />
       </div>
       <div>
         <h1 className="text-4xl font-bold">{item.name}</h1>
