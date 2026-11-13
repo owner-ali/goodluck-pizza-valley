@@ -48,7 +48,7 @@ export default function IceScene({ color, active }: { color: string; active: boo
     <Canvas frameloop={active ? 'always' : 'never'} dpr={mobile ? [1, 1.25] : [1, 2]} camera={{ position: [0, 0.3, 5.2], fov: 42 }} gl={{ antialias: !mobile }}>
       <ambientLight intensity={0.7} />
       <pointLight position={[3, 3, 3]} intensity={50} color="#ffffff" />
-      <pointLight position={[-3, -1, 2]} intensity={40} color="#22d3ee" />
+      <pointLight position={[-3, -1, 2]} intensity={40} color="#9fd8e8" />
       <Drink color={color} still={still} mobile={mobile} />
       <Float speed={1.2} floatIntensity={1.4}><mesh position={[-2.4, 1.1, -0.5]} rotation={[0.4, 0.6, 0]}><boxGeometry args={[0.7, 0.7, 0.7]} /><meshStandardMaterial color="#9ff3ff" transparent opacity={0.5} roughness={0.05} /></mesh></Float>
       {!mobile && <Float speed={1.5} floatIntensity={1.2}><mesh position={[2.5, -0.8, -0.3]} rotation={[0.2, 0.9, 0.3]}><boxGeometry args={[0.55, 0.55, 0.55]} /><meshStandardMaterial color="#9ff3ff" transparent opacity={0.5} roughness={0.05} /></mesh></Float>}

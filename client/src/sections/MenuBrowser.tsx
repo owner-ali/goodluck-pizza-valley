@@ -14,7 +14,9 @@ export default function MenuBrowser({ menu, onOpen }: { menu: MenuState; onOpen:
 
   return (
     <section id="menu" className="world-pizza mx-auto max-w-6xl px-6 py-16">
-      <h2 className="text-4xl font-bold md:text-5xl">The <span className="gt">Menu</span></h2>
+      <p className="eyebrow">Our kitchen</p>
+      <h2 className="mt-2 text-4xl font-bold md:text-5xl">The <span className="gt">Menu</span></h2>
+      <div className="rule" />
       <p className="mt-2 text-sm muted">Sample menu: names and prices (PKR) are placeholders until the owner edits them.</p>
 
       <div className="-mx-6 mt-6 flex gap-2 overflow-x-auto px-6 pb-2" role="group" aria-label="Categories">

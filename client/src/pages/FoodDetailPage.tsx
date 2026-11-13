@@ -14,7 +14,7 @@ export default function FoodDetailPage({ menu, onOpen }: { menu: MenuState; onOp
   if (!item) return <section className="px-6 py-24 text-center"><h1 className="text-3xl font-bold">We couldn't find that dish</h1><Link className="btn btn-ember mt-6" to="/#menu">Back to the menu</Link></section>
   return (
     <section className="mx-auto grid max-w-4xl gap-8 px-6 py-12 md:grid-cols-2">
-      <div className="plate grid min-h-64 place-items-center rounded-3xl" style={{ '--accent': '#ff6a1a' } as CSSProperties}>
+      <div className="plate grid min-h-64 place-items-center rounded-3xl" style={{ '--accent': '#d4af37' } as CSSProperties}>
         <FoodPic id={item.id} image={item.image} category={item.categoryId} color={item.color} alt={item.name} imgClass="h-56 w-56 rounded-full object-cover" artClass="h-56 w-56" />
       </div>
       <div>

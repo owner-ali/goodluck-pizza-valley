@@ -58,13 +58,13 @@ export default function HeroScene({ active = true }: { active?: boolean }) {
   return (
     <Canvas frameloop={active ? "always" : "never"} dpr={mobile ? [1, 1.25] : [1, 2]} camera={{ position: [0, 0.6, 6.2], fov: 45 }} gl={{ antialias: !mobile, powerPreference: 'high-performance' }}>
       <ambientLight intensity={0.5} />
-      <pointLight position={[3, 3, 3]} intensity={60} color="#ff4d6d" />
-      <pointLight position={[-4, -1, 2]} intensity={40} color="#22d3ee" />
+      <pointLight position={[3, 3, 3]} intensity={60} color="#ffcf6b" />
+      <pointLight position={[-4, -1, 2]} intensity={40} color="#cfe9f2" />
       <Float speed={1.2} floatIntensity={0.6}><Pizza /></Float>
       <IceCube position={[-3, 1.4, -0.5]} scale={0.6} />
       <IceCube position={[3.2, -1.2, 0]} scale={0.45} />
       {!mobile && <IceCube position={[2.6, 1.9, -1]} scale={0.35} />}
-      <Sparkles count={mobile ? 25 : 80} scale={[10, 6, 6]} size={mobile ? 2 : 3} speed={0.4} color="#ffb067" />
+      <Sparkles count={mobile ? 25 : 80} scale={[10, 6, 6]} size={mobile ? 2 : 3} speed={0.4} color="#ffd98a" />
     </Canvas>
   )
 }

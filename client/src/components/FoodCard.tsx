@@ -14,7 +14,7 @@ export default function FoodCard({ item, world, onOpen }: { item: MenuItem; worl
     const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5
     ref.current!.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg)`
   }
-  const accent = world === 'ice' ? '#38e8ff' : '#ff6a1a'
+  const accent = world === 'ice' ? '#9fd8e8' : '#d4af37'
   return (
     <article ref={ref} onPointerMove={move} onPointerLeave={() => { if (ref.current) ref.current.style.transform = '' }}
       className="food-card glass flex flex-col p-4" style={{ '--accent': accent } as CSSProperties}>
