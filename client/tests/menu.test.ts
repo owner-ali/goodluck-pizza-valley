@@ -17,8 +17,8 @@ test('every item has a valid category, size and unique id', () => {
     assert.equal(new Set(i.sizes.map((s: any) => s.id)).size, i.sizes.length)
   }
 })
-test('all ten required categories have items', () => {
-  assert.equal(menu.categories.length, 10)
+test('all required categories have items', () => {
+  assert.equal(menu.categories.length, 11)
   for (const c of menu.categories) assert.ok(menu.items.some((i: any) => i.categoryId === c.id), c.id)
 })
 test('lineTotal adds size, add-ons and quantity', () => {

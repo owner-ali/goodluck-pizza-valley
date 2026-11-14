@@ -26,6 +26,7 @@ export function cleanProduct(b) {
     categoryId: str(b.categoryId, 40), name, description: str(b.description, 400), emoji: str(b.emoji, 8) || '🍽️',
     color: /^#[0-9a-fA-F]{6}$/.test(b.color ?? '') ? b.color : undefined,
     image: /^\/uploads\/[a-f0-9]+\.(jpg|png|webp)$/.test(b.image ?? '') ? b.image : '',
+    compareAt: Number(b.compareAt) > 0 ? Math.round(num(b.compareAt, 0, 1_000_000)) : null,
     veg: !!b.veg, spicy: !!b.spicy, popular: !!b.popular, available: b.available !== false, sizes, addons: cleanOptions(b.addons, true),
   }
 }

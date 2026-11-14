@@ -5,12 +5,13 @@ import { useTitle } from '../hooks/useTitle'
 import { apiConfigured, getConfig, placeOrder } from '../services/orderService'
 import { isPhone } from '../lib/validate'
 import { formatPKR } from '../lib/pricing'
+import { getPref } from '../lib/pref'
 import Field, { inputCls } from '../components/Field'
 
 export default function CheckoutPage() {
   useTitle('Checkout | Good Luck Pizza Valley & Ice Bar', 'Place your order for delivery or pickup. Cash on delivery.')
   const { lines, subtotal, clear } = useCart()
-  const [f, setF] = useState({ name: '', phone: '', type: 'delivery' as 'delivery' | 'pickup', address: '', notes: '' })
+  const [f, setF] = useState(() => { const p = getPref(); return { name: '', phone: '', type: p.mode, address: p.area, notes: '' } })
   const [err, setErr] = useState<Record<string, string>>({})
   const [busy, setBusy] = useState(false)
   const [fail, setFail] = useState('')

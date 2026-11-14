@@ -1,39 +1,564 @@
 {
- "_notice": "SAMPLE DATA. Names, descriptions and PKR prices are placeholders for the admin to edit. Not the restaurant's real menu.",
+ "_notice": "SAMPLE DATA. Names, descriptions and PKR prices (including deal prices) are placeholders for the admin to edit. Not the restaurant's real menu.",
  "categories": [
-  {"id":"pizza","name":"Pizza","world":"pizza"},{"id":"burgers","name":"Burgers","world":"pizza"},
-  {"id":"pasta","name":"Pasta","world":"pizza"},{"id":"fries","name":"Fries","world":"pizza"},
-  {"id":"sandwiches","name":"Sandwiches","world":"pizza"},{"id":"snacks","name":"Snacks","world":"pizza"},
-  {"id":"cold-drinks","name":"Cold Drinks","world":"ice"},{"id":"mocktails","name":"Ice Bar Mocktails","world":"ice"},
-  {"id":"shakes","name":"Shakes","world":"ice"},{"id":"desserts","name":"Desserts","world":"pizza"}
+  {
+   "id": "deals",
+   "name": "Hot Deals",
+   "world": "pizza"
+  },
+  {
+   "id": "pizza",
+   "name": "Pizza",
+   "world": "pizza"
+  },
+  {
+   "id": "burgers",
+   "name": "Burgers",
+   "world": "pizza"
+  },
+  {
+   "id": "pasta",
+   "name": "Pasta",
+   "world": "pizza"
+  },
+  {
+   "id": "fries",
+   "name": "Fries",
+   "world": "pizza"
+  },
+  {
+   "id": "sandwiches",
+   "name": "Sandwiches",
+   "world": "pizza"
+  },
+  {
+   "id": "snacks",
+   "name": "Snacks",
+   "world": "pizza"
+  },
+  {
+   "id": "cold-drinks",
+   "name": "Cold Drinks",
+   "world": "ice"
+  },
+  {
+   "id": "mocktails",
+   "name": "Ice Bar Mocktails",
+   "world": "ice"
+  },
+  {
+   "id": "shakes",
+   "name": "Shakes",
+   "world": "ice"
+  },
+  {
+   "id": "desserts",
+   "name": "Desserts",
+   "world": "pizza"
+  }
  ],
  "addonSets": {
   "pizza": [
-   {"group":"Toppings","label":"Extra cheese","price":150},{"group":"Toppings","label":"Jalapenos","price":80},
-   {"group":"Toppings","label":"Olives","price":80},{"group":"Toppings","label":"Mushrooms","price":100},
-   {"group":"Add-ons","label":"Stuffed crust","price":200},{"group":"Add-ons","label":"Garlic dip","price":60}],
-  "burger": [{"group":"Add-ons","label":"Extra patty","price":300},{"group":"Add-ons","label":"Cheese slice","price":80},{"group":"Add-ons","label":"Dip sauce","price":60}],
-  "food": [{"group":"Add-ons","label":"Extra cheese","price":100},{"group":"Add-ons","label":"Dip sauce","price":60}],
-  "drink": [{"group":"Add-ons","label":"Extra ice","price":0},{"group":"Add-ons","label":"Mint garnish","price":30}],
+   {
+    "group": "Toppings",
+    "label": "Extra cheese",
+    "price": 150
+   },
+   {
+    "group": "Toppings",
+    "label": "Jalapenos",
+    "price": 80
+   },
+   {
+    "group": "Toppings",
+    "label": "Olives",
+    "price": 80
+   },
+   {
+    "group": "Toppings",
+    "label": "Mushrooms",
+    "price": 100
+   },
+   {
+    "group": "Add-ons",
+    "label": "Stuffed crust",
+    "price": 200
+   },
+   {
+    "group": "Add-ons",
+    "label": "Garlic dip",
+    "price": 60
+   }
+  ],
+  "burger": [
+   {
+    "group": "Add-ons",
+    "label": "Extra patty",
+    "price": 300
+   },
+   {
+    "group": "Add-ons",
+    "label": "Cheese slice",
+    "price": 80
+   },
+   {
+    "group": "Add-ons",
+    "label": "Dip sauce",
+    "price": 60
+   }
+  ],
+  "food": [
+   {
+    "group": "Add-ons",
+    "label": "Extra cheese",
+    "price": 100
+   },
+   {
+    "group": "Add-ons",
+    "label": "Dip sauce",
+    "price": 60
+   }
+  ],
+  "drink": [
+   {
+    "group": "Add-ons",
+    "label": "Extra ice",
+    "price": 0
+   },
+   {
+    "group": "Add-ons",
+    "label": "Mint garnish",
+    "price": 30
+   }
+  ],
   "none": []
  },
  "items": [
-  {"id":"p1","categoryId":"pizza","name":"Fire Valley Pepperoni","description":"Crisp crust, stretchy mozzarella and generous pepperoni.","emoji":"🍕","veg":false,"spicy":true,"popular":true,"sizes":[{"label":"Small","price":900},{"label":"Medium","price":1500},{"label":"Large","price":2000}],"addons":"pizza"},
-  {"id":"p2","categoryId":"pizza","name":"Garden Margherita","description":"Tomato, mozzarella and fresh basil on a thin base.","emoji":"🍕","veg":true,"sizes":[{"label":"Small","price":800},{"label":"Medium","price":1300},{"label":"Large","price":1800}],"addons":"pizza"},
-  {"id":"p3","categoryId":"pizza","name":"Smoky BBQ Chicken","description":"BBQ sauce, grilled chicken, onions and cheese.","emoji":"🍕","veg":false,"popular":true,"sizes":[{"label":"Small","price":950},{"label":"Medium","price":1600},{"label":"Large","price":2100}],"addons":"pizza"},
-  {"id":"p4","categoryId":"pizza","name":"Veggie Supreme","description":"Peppers, olives, mushrooms, corn and cheese.","emoji":"🍕","veg":true,"sizes":[{"label":"Small","price":850},{"label":"Medium","price":1400},{"label":"Large","price":1900}],"addons":"pizza"},
-  {"id":"b1","categoryId":"burgers","name":"Valley Smash Burger","description":"Smashed beef patty, cheese, pickles and house sauce.","emoji":"🍔","veg":false,"popular":true,"sizes":[{"label":"Single","price":700},{"label":"Double","price":1000}],"addons":"burger"},
-  {"id":"b2","categoryId":"burgers","name":"Crispy Chicken Burger","description":"Golden fried chicken, lettuce and creamy mayo.","emoji":"🍔","veg":false,"sizes":[{"label":"Regular","price":600},{"label":"Large","price":850}],"addons":"burger"},
-  {"id":"pa1","categoryId":"pasta","name":"Creamy Alfredo","description":"Penne in a garlic parmesan cream sauce.","emoji":"🍝","veg":true,"sizes":[{"label":"Regular","price":850},{"label":"Large","price":1250}],"addons":"food"},
-  {"id":"f1","categoryId":"fries","name":"Loaded Fries","description":"Crinkle fries with cheese sauce and spicy seasoning.","emoji":"🍟","veg":true,"spicy":true,"sizes":[{"label":"Regular","price":450},{"label":"Large","price":650}],"addons":"food"},
-  {"id":"s1","categoryId":"sandwiches","name":"Club Sandwich","description":"Triple-layer toasted sandwich with chicken and egg.","emoji":"🥪","veg":false,"sizes":[{"label":"Regular","price":600}],"addons":"food"},
-  {"id":"sn1","categoryId":"snacks","name":"Hot Wings","description":"Crispy wings tossed in a spicy glaze.","emoji":"🍗","veg":false,"spicy":true,"sizes":[{"label":"6 pcs","price":650},{"label":"12 pcs","price":1200}],"addons":"food"},
-  {"id":"d1","categoryId":"cold-drinks","name":"Soft Drink","description":"Chilled soft drink, served over ice.","emoji":"🥤","veg":true,"color":"#c0392b","sizes":[{"label":"Regular","price":120},{"label":"Large","price":180}],"addons":"drink"},
-  {"id":"m1","categoryId":"mocktails","name":"Blue Lagoon","description":"Blue curacao syrup, lemon and sparkling soda.","emoji":"🍹","veg":true,"popular":true,"color":"#2fb8ff","sizes":[{"label":"Regular","price":450},{"label":"Large","price":600}],"addons":"drink"},
-  {"id":"m2","categoryId":"mocktails","name":"Mint Mojito","description":"Fresh mint, lime and soda over crushed ice.","emoji":"🍹","veg":true,"color":"#4be08a","sizes":[{"label":"Regular","price":400},{"label":"Large","price":550}],"addons":"drink"},
-  {"id":"m3","categoryId":"mocktails","name":"Strawberry Frost","description":"Strawberry, lemon and ice, shaken cold.","emoji":"🍹","veg":true,"color":"#ff5c8a","sizes":[{"label":"Regular","price":450},{"label":"Large","price":600}],"addons":"drink"},
-  {"id":"m4","categoryId":"mocktails","name":"Mango Chill","description":"Mango pulp, orange and a splash of soda.","emoji":"🍹","veg":true,"color":"#ffb02e","sizes":[{"label":"Regular","price":450},{"label":"Large","price":600}],"addons":"drink"},
-  {"id":"sh1","categoryId":"shakes","name":"Cookies Shake","description":"Thick vanilla shake blended with cookie crumbs.","emoji":"🥛","veg":true,"color":"#d9c8b4","sizes":[{"label":"Regular","price":550},{"label":"Large","price":750}],"addons":"drink"},
-  {"id":"de1","categoryId":"desserts","name":"Molten Lava Cake","description":"Warm chocolate cake with a gooey centre.","emoji":"🍰","veg":true,"sizes":[{"label":"Single","price":450}],"addons":"none"}
+  {
+   "id": "p1",
+   "categoryId": "pizza",
+   "name": "Fire Valley Pepperoni",
+   "description": "Crisp crust, stretchy mozzarella and generous pepperoni.",
+   "emoji": "🍕",
+   "veg": false,
+   "spicy": true,
+   "popular": true,
+   "sizes": [
+    {
+     "label": "Small",
+     "price": 900
+    },
+    {
+     "label": "Medium",
+     "price": 1500
+    },
+    {
+     "label": "Large",
+     "price": 2000
+    }
+   ],
+   "addons": "pizza"
+  },
+  {
+   "id": "p2",
+   "categoryId": "pizza",
+   "name": "Garden Margherita",
+   "description": "Tomato, mozzarella and fresh basil on a thin base.",
+   "emoji": "🍕",
+   "veg": true,
+   "sizes": [
+    {
+     "label": "Small",
+     "price": 800
+    },
+    {
+     "label": "Medium",
+     "price": 1300
+    },
+    {
+     "label": "Large",
+     "price": 1800
+    }
+   ],
+   "addons": "pizza"
+  },
+  {
+   "id": "p3",
+   "categoryId": "pizza",
+   "name": "Smoky BBQ Chicken",
+   "description": "BBQ sauce, grilled chicken, onions and cheese.",
+   "emoji": "🍕",
+   "veg": false,
+   "popular": true,
+   "sizes": [
+    {
+     "label": "Small",
+     "price": 950
+    },
+    {
+     "label": "Medium",
+     "price": 1600
+    },
+    {
+     "label": "Large",
+     "price": 2100
+    }
+   ],
+   "addons": "pizza"
+  },
+  {
+   "id": "p4",
+   "categoryId": "pizza",
+   "name": "Veggie Supreme",
+   "description": "Peppers, olives, mushrooms, corn and cheese.",
+   "emoji": "🍕",
+   "veg": true,
+   "sizes": [
+    {
+     "label": "Small",
+     "price": 850
+    },
+    {
+     "label": "Medium",
+     "price": 1400
+    },
+    {
+     "label": "Large",
+     "price": 1900
+    }
+   ],
+   "addons": "pizza"
+  },
+  {
+   "id": "b1",
+   "categoryId": "burgers",
+   "name": "Valley Smash Burger",
+   "description": "Smashed beef patty, cheese, pickles and house sauce.",
+   "emoji": "🍔",
+   "veg": false,
+   "popular": true,
+   "sizes": [
+    {
+     "label": "Single",
+     "price": 700
+    },
+    {
+     "label": "Double",
+     "price": 1000
+    }
+   ],
+   "addons": "burger"
+  },
+  {
+   "id": "b2",
+   "categoryId": "burgers",
+   "name": "Crispy Chicken Burger",
+   "description": "Golden fried chicken, lettuce and creamy mayo.",
+   "emoji": "🍔",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 600
+    },
+    {
+     "label": "Large",
+     "price": 850
+    }
+   ],
+   "addons": "burger"
+  },
+  {
+   "id": "pa1",
+   "categoryId": "pasta",
+   "name": "Creamy Alfredo",
+   "description": "Penne in a garlic parmesan cream sauce.",
+   "emoji": "🍝",
+   "veg": true,
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 850
+    },
+    {
+     "label": "Large",
+     "price": 1250
+    }
+   ],
+   "addons": "food"
+  },
+  {
+   "id": "f1",
+   "categoryId": "fries",
+   "name": "Loaded Fries",
+   "description": "Crinkle fries with cheese sauce and spicy seasoning.",
+   "emoji": "🍟",
+   "veg": true,
+   "spicy": true,
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 450
+    },
+    {
+     "label": "Large",
+     "price": 650
+    }
+   ],
+   "addons": "food"
+  },
+  {
+   "id": "s1",
+   "categoryId": "sandwiches",
+   "name": "Club Sandwich",
+   "description": "Triple-layer toasted sandwich with chicken and egg.",
+   "emoji": "🥪",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 600
+    }
+   ],
+   "addons": "food"
+  },
+  {
+   "id": "sn1",
+   "categoryId": "snacks",
+   "name": "Hot Wings",
+   "description": "Crispy wings tossed in a spicy glaze.",
+   "emoji": "🍗",
+   "veg": false,
+   "spicy": true,
+   "sizes": [
+    {
+     "label": "6 pcs",
+     "price": 650
+    },
+    {
+     "label": "12 pcs",
+     "price": 1200
+    }
+   ],
+   "addons": "food"
+  },
+  {
+   "id": "d1",
+   "categoryId": "cold-drinks",
+   "name": "Soft Drink",
+   "description": "Chilled soft drink, served over ice.",
+   "emoji": "🥤",
+   "veg": true,
+   "color": "#c0392b",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 120
+    },
+    {
+     "label": "Large",
+     "price": 180
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "m1",
+   "categoryId": "mocktails",
+   "name": "Blue Lagoon",
+   "description": "Blue curacao syrup, lemon and sparkling soda.",
+   "emoji": "🍹",
+   "veg": true,
+   "popular": true,
+   "color": "#2fb8ff",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 450
+    },
+    {
+     "label": "Large",
+     "price": 600
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "m2",
+   "categoryId": "mocktails",
+   "name": "Mint Mojito",
+   "description": "Fresh mint, lime and soda over crushed ice.",
+   "emoji": "🍹",
+   "veg": true,
+   "color": "#4be08a",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 400
+    },
+    {
+     "label": "Large",
+     "price": 550
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "m3",
+   "categoryId": "mocktails",
+   "name": "Strawberry Frost",
+   "description": "Strawberry, lemon and ice, shaken cold.",
+   "emoji": "🍹",
+   "veg": true,
+   "color": "#ff5c8a",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 450
+    },
+    {
+     "label": "Large",
+     "price": 600
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "m4",
+   "categoryId": "mocktails",
+   "name": "Mango Chill",
+   "description": "Mango pulp, orange and a splash of soda.",
+   "emoji": "🍹",
+   "veg": true,
+   "color": "#ffb02e",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 450
+    },
+    {
+     "label": "Large",
+     "price": 600
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "sh1",
+   "categoryId": "shakes",
+   "name": "Cookies Shake",
+   "description": "Thick vanilla shake blended with cookie crumbs.",
+   "emoji": "🥛",
+   "veg": true,
+   "color": "#d9c8b4",
+   "sizes": [
+    {
+     "label": "Regular",
+     "price": 550
+    },
+    {
+     "label": "Large",
+     "price": 750
+    }
+   ],
+   "addons": "drink"
+  },
+  {
+   "id": "de1",
+   "categoryId": "desserts",
+   "name": "Molten Lava Cake",
+   "description": "Warm chocolate cake with a gooey centre.",
+   "emoji": "🍰",
+   "veg": true,
+   "sizes": [
+    {
+     "label": "Single",
+     "price": 450
+    }
+   ],
+   "addons": "none"
+  },
+  {
+   "id": "dl1",
+   "categoryId": "deals",
+   "name": "Family Feast",
+   "description": "Large pizza, large fries and a 1 L drink.",
+   "emoji": "🍕",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Deal",
+     "price": 2450
+    }
+   ],
+   "addons": "none",
+   "compareAt": 3150,
+   "popular": true
+  },
+  {
+   "id": "dl2",
+   "categoryId": "deals",
+   "name": "Two Medium Pizzas",
+   "description": "Any two medium pizzas from the menu.",
+   "emoji": "🍕",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Deal",
+     "price": 2400
+    }
+   ],
+   "addons": "none",
+   "compareAt": 3000
+  },
+  {
+   "id": "dl3",
+   "categoryId": "deals",
+   "name": "Duo Burger Combo",
+   "description": "Two smash burgers, regular fries and two drinks.",
+   "emoji": "🍔",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Deal",
+     "price": 1650
+    }
+   ],
+   "addons": "none",
+   "compareAt": 2100,
+   "popular": true
+  },
+  {
+   "id": "dl4",
+   "categoryId": "deals",
+   "name": "Chill Pair",
+   "description": "Two mocktails and a loaded fries.",
+   "emoji": "🍹",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Deal",
+     "price": 1100
+    }
+   ],
+   "addons": "none",
+   "compareAt": 1350
+  },
+  {
+   "id": "dl5",
+   "categoryId": "deals",
+   "name": "Solo Pizza Meal",
+   "description": "Small pizza and a soft drink.",
+   "emoji": "🍕",
+   "veg": false,
+   "sizes": [
+    {
+     "label": "Deal",
+     "price": 850
+    }
+   ],
+   "addons": "none",
+   "compareAt": 1020
+  }
  ]
 }

@@ -63,12 +63,12 @@ export function CustomersPanel() {
     <ul className="space-y-2">{data?.map((c: R) => <li key={c.phone} className="glass flex flex-wrap justify-between gap-2 p-3 text-sm"><span><b>{c.name}</b> | {c.phone}</span><span>{c.orders} orders | {formatPKR(c.spent)} | last {date(c.last)}</span></li>)}</ul></>)
 }
 
-const blank: R = { id: '', name: '', categoryId: '', description: '', emoji: '🍽️', color: '', image: '', veg: false, spicy: false, popular: false, available: true, sizes: '', addons: '' }
+const blank: R = { id: '', name: '', categoryId: '', description: '', emoji: '🍽️', color: '', image: '', veg: false, spicy: false, popular: false, available: true, sizes: '', addons: '', compareAt: '' }
 export function ProductsPanel() {
   const p = useList('/products'); const c = useList('/categories')
   const [f, setF] = useState<R>(blank); const [msg, setMsg] = useState('')
   const set = (x: R) => setF((s) => ({ ...s, ...x }))
-  const edit = (i: R) => { setMsg(''); setF({ ...blank, ...i, color: i.color ?? '', image: i.image ?? '', sizes: formatSizes(i.sizes), addons: formatAddons(i.addons) }); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }) }
+  const edit = (i: R) => { setMsg(''); setF({ ...blank, ...i, color: i.color ?? '', image: i.image ?? '', sizes: formatSizes(i.sizes), addons: formatAddons(i.addons), compareAt: i.compareAt ?? '' }); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }) }
   const save = async (e: FormEvent) => {
     e.preventDefault(); setMsg('')
     try {
@@ -96,6 +96,7 @@ export function ProductsPanel() {
       <label className="block text-sm">Description<textarea rows={2} maxLength={400} className={inputCls} value={f.description} onChange={(e) => set({ description: e.target.value })} /></label>
       <div className="grid grid-cols-2 gap-3"><label className="block text-sm">Emoji<input className={inputCls} value={f.emoji} onChange={(e) => set({ emoji: e.target.value })} /></label>
         <label className="block text-sm">Drink colour (#rrggbb, optional)<input className={inputCls} value={f.color} onChange={(e) => set({ color: e.target.value })} /></label></div>
+      <label className="block text-sm">Original price in PKR (optional, shows a "Save %" badge when higher than the size price)<input type="number" min={0} className={inputCls} value={f.compareAt} onChange={(e) => set({ compareAt: e.target.value })} /></label>
       <label className="block text-sm">Photo (JPG, PNG or WebP, max 2 MB)<input type="file" accept="image/jpeg,image/png,image/webp" className={inputCls} onChange={(e) => upload(e.target.files?.[0])} /></label>
       {f.image && <p className="flex items-center gap-3 text-sm"><img src={assetUrl(f.image)} alt="" className="h-14 w-14 rounded-lg object-cover" /><button type="button" className={small} onClick={() => set({ image: '' })}>Remove photo</button></p>}
       <label className="block text-sm">Sizes and prices in PKR, one per line: Name | Price<textarea rows={3} className={inputCls} value={f.sizes} onChange={(e) => set({ sizes: e.target.value })} placeholder={'Small | 900\nLarge | 2000'} /></label>

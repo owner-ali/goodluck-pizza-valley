@@ -28,3 +28,9 @@ export function applyFilters(items: MenuItem[], f: Filters): MenuItem[] {
   }
   return [...out].sort(by[f.sort])
 }
+
+// Percent saved when a deal has an original price (compareAt) higher than its price; 0 otherwise.
+export const savePct = (i: MenuItem) => {
+  const m = minPrice(i)
+  return i.compareAt && i.compareAt > m ? Math.round((1 - m / i.compareAt) * 100) : 0
+}
